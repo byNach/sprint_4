@@ -54,11 +54,11 @@ function orderByYear(array) {
     }
     return 0;
   });
-console.log(result);
+  return(result);
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
+function moviesAverageByCategory(array, category) {
 
 }
 
