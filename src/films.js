@@ -68,8 +68,35 @@ function orderByYear(array) {
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(array) {
+  const allMovies = array.map((x) => x);
+  const regex = /\d+/g;
 
+  for(let i = 0; i < allMovies.length; i++){
+
+    let duration = allMovies[i].duration;
+
+    if (duration.includes("h" && "min")){
+      let durationNumbers = duration.match(regex);
+      let horas = durationNumbers[0] * 60;
+      let minutos = durationNumbers[1] * 1;
+      let durationInMinutes = horas + minutos;
+      allMovies[i].duration = durationInMinutes;
+    }
+    if (duration.includes("h") == false){
+      let durationNumbers = duration.match(regex);
+      let durationInMinutes = durationNumbers[0] * 1;
+      allMovies[i].duration = durationInMinutes;
+
+    }
+    if (duration.includes("min") == false){
+      let durationNumbers = duration.match(regex);
+      let durationInMinutes = durationNumbers[0] * 60;
+      allMovies[i].duration = durationInMinutes;
+    }
+  }
+  console.log(array);
+  console.log(allMovies);
 }
 
 // Exercise 8: Get the best film of a year
