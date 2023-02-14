@@ -95,6 +95,8 @@ function hoursToMinutes(array) {
       allMovies[i].duration = durationInMinutes;
     }
   }
+  const result = allMovies;
+  return result;
 }
 
 // Exercise 8: Get the best film of a year
