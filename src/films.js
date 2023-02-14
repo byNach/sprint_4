@@ -25,13 +25,13 @@ function moviesAverageOfDirector(array, director) {
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-let allMoviesTitle = array.map(e => e.title);
-let first20movies = [];
-for (i = 20; i > 0; i--){
-first20movies.push(allMoviesTitle[i]);
-}
-let result = first20movies.sort((a,b) => {if(a == b) { return 0;} if (a < b){return -1;} return 1;});
-return result;
+  let allMoviesTitle = array.map(e => e.title);
+  let first20movies = [];
+  for (i = 20; i > 0; i--) {
+    first20movies.push(allMoviesTitle[i]);
+  }
+  let result = first20movies.sort((a, b) => { if (a == b) { return 0; } if (a < b) { return -1; } return 1; });
+  return result;
 }
 
 // Exercise 5: Order by year, ascending
@@ -58,7 +58,7 @@ function orderByYear(array) {
 }
 
 // Exercise 6: Calculate the average of the movies in a category
- function moviesAverageByCategory(movies, genre) {
+function moviesAverageByCategory(movies, genre) {
   const moviesWithGenre = (movies.filter(movie => movie.genre.includes(genre)));
   let moviesWithGenreScore = moviesWithGenre.map(e => e.score);
   let scoreReduce = moviesWithGenreScore.reduce((a, b) => a + b);
@@ -72,31 +72,29 @@ function hoursToMinutes(array) {
   const allMovies = array.map((x) => x);
   const regex = /\d+/g;
 
-  for(let i = 0; i < allMovies.length; i++){
+  for (let i = 0; i < allMovies.length; i++) {
 
     let duration = allMovies[i].duration;
 
-    if (duration.includes("h" && "min")){
+    if (duration.includes("h" && "min")) {
       let durationNumbers = duration.match(regex);
       let horas = durationNumbers[0] * 60;
       let minutos = durationNumbers[1] * 1;
       let durationInMinutes = horas + minutos;
       allMovies[i].duration = durationInMinutes;
     }
-    if (duration.includes("h") == false){
+    if (duration.includes("h") == false) {
       let durationNumbers = duration.match(regex);
       let durationInMinutes = durationNumbers[0] * 1;
       allMovies[i].duration = durationInMinutes;
 
     }
-    if (duration.includes("min") == false){
+    if (duration.includes("min") == false) {
       let durationNumbers = duration.match(regex);
       let durationInMinutes = durationNumbers[0] * 60;
       allMovies[i].duration = durationInMinutes;
     }
   }
-  console.log(array);
-  console.log(allMovies);
 }
 
 // Exercise 8: Get the best film of a year
