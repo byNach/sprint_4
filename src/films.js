@@ -101,13 +101,12 @@ function hoursToMinutes(array) {
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
+  
   const yearFound = array.filter(e => e.year === year);
-  console.log(yearFound);
   if(yearFound.length == 0){
     alert("No tenemos películas con este año. Introduce otro por favor.");    
   }
 
-  /*
   let moviesScoreDescendent = array.sort(function (a, b) {
     if (a.score < b.score) {
       return 1;
@@ -117,9 +116,10 @@ function bestFilmOfYear(array, year) {
     }
     return 0;
   });
-  */
+  const filmsOnThatYear = moviesScoreDescendent.filter(e => e.year === year);
+  const result = filmsOnThatYear[0];
+  return result
 }
-  //const filmsOnThatYear = moviesScoreDescendent.filter(e => e.year === year);
 
 
 
