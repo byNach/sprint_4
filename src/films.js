@@ -103,6 +103,8 @@ function hoursToMinutes(array) {
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
   
+  result = [];
+  
   const yearFound = array.filter(e => e.year === year);
   if(yearFound.length == 0){
     alert("No tenemos películas con este año. Introduce otro por favor.");    
@@ -117,9 +119,11 @@ function bestFilmOfYear(array, year) {
     }
     return 0;
   });
+  console.log(moviesScoreDescendent);
   const filmsOnThatYear = moviesScoreDescendent.filter(e => e.year === year);
-  const result = filmsOnThatYear[0];
-  return result
+  const bestFilmOnThatYear = filmsOnThatYear.shift();
+  result.push(bestFilmOnThatYear);
+  return result;
 }
 
 
