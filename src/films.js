@@ -36,7 +36,8 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-  let moviesAlphabetAscendent = array.sort(function (a, b) {
+  let arrayCopy = [...array];
+  let moviesAlphabetAscendent = arrayCopy.sort(function (a, b) {
     if (a.title > b.title) {
       return 1;
     }
