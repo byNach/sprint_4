@@ -19,7 +19,7 @@ function moviesAverageOfDirector(array, director) {
   let moviesFromDirectorScore = moviesFromDirector.map(e => e.score);
   let scoreReduce = moviesFromDirectorScore.reduce((a, b) => a + b);
   let averageScore = scoreReduce / moviesFromDirector.length;
-  let result = averageScore.toFixed(2);
+  let result = Number(averageScore.toFixed(2));
   return result;
 }
 
