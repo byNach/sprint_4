@@ -29,7 +29,7 @@ function orderAlphabetically(array) {
   console.log(allMoviesTitle);
   allMoviesTitle.sort((a, b) => { if (a == b) { return 0; } if (a < b) { return -1; } return 1; });
   console.log(allMoviesTitle);
-  const result = allMoviesTitle.slice(0 ,20);
+  const result = allMoviesTitle.slice(0, 20);
   return result;
 }
 
@@ -63,7 +63,7 @@ function moviesAverageByCategory(movies, genre) {
   let moviesWithGenreScore = moviesWithGenre.map(e => e.score);
   let scoreReduce = moviesWithGenreScore.reduce((a, b) => a + b);
   let averageScore = scoreReduce / moviesWithGenreScore.length;
-  let result = averageScore.toFixed(2);
+  let result = Number(averageScore.toFixed(2));
   return result;
 }
 
@@ -101,12 +101,12 @@ function hoursToMinutes(array) {
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
-  
+
   result = [];
-  
+
   const yearFound = array.filter(e => e.year === year);
-  if(yearFound.length == 0){
-    alert("No tenemos películas con este año. Introduce otro por favor.");    
+  if (yearFound.length == 0) {
+    alert("No tenemos películas con este año. Introduce otro por favor.");
   }
 
   let moviesScoreDescendent = array.sort(function (a, b) {
